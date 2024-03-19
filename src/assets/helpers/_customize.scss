@@ -1,0 +1,115 @@
+// Banner setting
+@for $i from 1 to 5 {
+  .header-#{ $i } {
+    background-size: cover;
+    background-position: center center;
+    background-image: url('~@/assets/img/banner/banner0#{$i}.jpg');
+      // 在 md 斷點之上應用高度為 20rem
+      @include media-breakpoint-up(md) {
+        height: 672px;
+      }
+      // 在 md 斷點之下應用高度為 8rem
+      @include media-breakpoint-down(md) {
+        height: 336px;
+      }
+  }
+}
+
+// HomePage Go shopping now section
+@for $i from 1 to 7 {
+  .type-#{ $i } {
+    overflow: hidden;
+    transition: transform .3s ease;
+    background-size: cover;
+    background-position: center center;
+    background-image: url('~@/assets/img/category/type0#{$i}.jpg');
+    &:hover {
+      transition: .3s;
+      transform: scale(1.05);
+    }
+    // 在 md 斷點之上應用高度為 20rem
+    @include media-breakpoint-up(md) {
+      height: 20rem;
+    }
+    // 在 md 斷點之下應用高度為 8rem
+    @include media-breakpoint-down(md) {
+      height: 8rem;
+    }
+  }
+}
+
+// About Img Setting
+@for $i from 1 to 5 {
+  .about-#{ $i } {
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    background-image: url('~@/assets/img/about/about0#{$i}.jpg');
+  }
+}
+
+// Logo Size
+.logo {
+  // 在 md 斷點之上應用高度為 20rem
+  @include media-breakpoint-up(md) {
+    width: 200px;
+    height: 60px;
+  }
+  // 在 md 斷點之下應用高度為 8rem
+  @include media-breakpoint-down(md) {
+    width: 150px;
+    height: 45px;
+  }
+}
+
+.btn-outline-primary:hover {
+  color: white;
+}
+
+// 之後查看看，要如何從bootstrap去改這個顏色
+.nav-link.active {
+  color: $primary !important;
+}
+
+.h-border:hover {
+  --bs-border-opacity: 1;
+  border-color: rgba(var(--bs-primary-rgb), var(--bs-border-opacity)) !important;
+}
+
+.n-line {
+  text-decoration: none;
+}
+
+.n-sbar::-webkit-scrollbar {
+  display: none;
+}
+
+.q-input {
+  // 移除黃色底線和警告文字
+  appearance: textfield;
+
+  // 這裡可以加入其他樣式設定
+  border: none;
+  outline: none;
+  text-align: center;
+  width: 1.5rem;
+
+  // 選擇器只針對 input type 為 number
+  &[type="number"]::-webkit-inner-spin-button,
+  &[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+// .img-zoom {
+//     overflow: hidden;
+//     transition: transform .3s ease;
+//     background-size: cover;
+//     background-position: center center;
+
+//     &:hover {
+//         transition: .3s;
+//         transform: scale(1.05);
+//     }
+// }
